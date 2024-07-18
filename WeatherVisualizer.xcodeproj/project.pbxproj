@@ -12,6 +12,10 @@
 		F8A9A0862C49620B00783590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0852C49620B00783590 /* ViewController.swift */; };
 		F8A9A08B2C49620F00783590 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A9A08A2C49620F00783590 /* Assets.xcassets */; };
 		F8A9A08E2C49620F00783590 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F8A9A08D2C49620F00783590 /* Base */; };
+		F8A9A0972C4969FE00783590 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0962C4969FE00783590 /* AppConstants.swift */; };
+		F8A9A0992C496A1A00783590 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0982C496A1A00783590 /* Fonts.swift */; };
+		F8A9A09B2C496A3300783590 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A09A2C496A3300783590 /* Assets.swift */; };
+		F8A9A09E2C496A9800783590 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A09D2C496A9800783590 /* UIView+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		F8A9A08A2C49620F00783590 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8A9A08D2C49620F00783590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8A9A08F2C49620F00783590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8A9A0962C4969FE00783590 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		F8A9A0982C496A1A00783590 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		F8A9A09A2C496A3300783590 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		F8A9A09D2C496A9800783590 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,42 @@
 		F8A9A0802C49620B00783590 /* WeatherVisualizer */ = {
 			isa = PBXGroup;
 			children = (
-				F8A9A0812C49620B00783590 /* AppDelegate.swift */,
-				F8A9A0832C49620B00783590 /* SceneDelegate.swift */,
+				F8A9A09C2C496A8500783590 /* Extension */,
+				F8A9A0952C4969E100783590 /* Sources */,
+				F8A9A09F2C496AB800783590 /* Suppotring+files */,
 				F8A9A0852C49620B00783590 /* ViewController.swift */,
-				F8A9A08A2C49620F00783590 /* Assets.xcassets */,
-				F8A9A08C2C49620F00783590 /* LaunchScreen.storyboard */,
 				F8A9A08F2C49620F00783590 /* Info.plist */,
 			);
 			path = WeatherVisualizer;
+			sourceTree = "<group>";
+		};
+		F8A9A0952C4969E100783590 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F8A9A0962C4969FE00783590 /* AppConstants.swift */,
+				F8A9A0982C496A1A00783590 /* Fonts.swift */,
+				F8A9A09A2C496A3300783590 /* Assets.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		F8A9A09C2C496A8500783590 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F8A9A09D2C496A9800783590 /* UIView+extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F8A9A09F2C496AB800783590 /* Suppotring+files */ = {
+			isa = PBXGroup;
+			children = (
+				F8A9A0812C49620B00783590 /* AppDelegate.swift */,
+				F8A9A0832C49620B00783590 /* SceneDelegate.swift */,
+				F8A9A08A2C49620F00783590 /* Assets.xcassets */,
+				F8A9A08C2C49620F00783590 /* LaunchScreen.storyboard */,
+			);
+			path = "Suppotring+files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +171,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A9A0862C49620B00783590 /* ViewController.swift in Sources */,
+				F8A9A0992C496A1A00783590 /* Fonts.swift in Sources */,
+				F8A9A09B2C496A3300783590 /* Assets.swift in Sources */,
+				F8A9A09E2C496A9800783590 /* UIView+extension.swift in Sources */,
 				F8A9A0822C49620B00783590 /* AppDelegate.swift in Sources */,
 				F8A9A0842C49620B00783590 /* SceneDelegate.swift in Sources */,
+				F8A9A0972C4969FE00783590 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
