@@ -16,6 +16,8 @@
 		F8A9A0992C496A1A00783590 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0982C496A1A00783590 /* Fonts.swift */; };
 		F8A9A09B2C496A3300783590 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A09A2C496A3300783590 /* Assets.swift */; };
 		F8A9A09E2C496A9800783590 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A09D2C496A9800783590 /* UIView+extension.swift */; };
+		F8A9A0AF2C497E4800783590 /* HorizontalPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0AE2C497E4800783590 /* HorizontalPickerViewCell.swift */; };
+		F8A9A0B12C49815200783590 /* HorizontalPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0B02C49815200783590 /* HorizontalPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		F8A9A0982C496A1A00783590 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		F8A9A09A2C496A3300783590 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		F8A9A09D2C496A9800783590 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		F8A9A0AE2C497E4800783590 /* HorizontalPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPickerViewCell.swift; sourceTree = "<group>"; };
+		F8A9A0B02C49815200783590 /* HorizontalPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +66,11 @@
 		F8A9A0802C49620B00783590 /* WeatherVisualizer */ = {
 			isa = PBXGroup;
 			children = (
-				F8A9A09C2C496A8500783590 /* Extension */,
 				F8A9A0952C4969E100783590 /* Sources */,
+				F8A9A09C2C496A8500783590 /* Extension */,
+				F8A9A0A32C497B0900783590 /* UIComponents */,
+				F8A9A0A02C496C3700783590 /* Module */,
 				F8A9A09F2C496AB800783590 /* Suppotring+files */,
-				F8A9A0852C49620B00783590 /* ViewController.swift */,
 				F8A9A08F2C49620F00783590 /* Info.plist */,
 			);
 			path = WeatherVisualizer;
@@ -98,6 +103,31 @@
 				F8A9A08C2C49620F00783590 /* LaunchScreen.storyboard */,
 			);
 			path = "Suppotring+files";
+			sourceTree = "<group>";
+		};
+		F8A9A0A02C496C3700783590 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				F8A9A0852C49620B00783590 /* ViewController.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		F8A9A0A32C497B0900783590 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F8A9A0AD2C497E1500783590 /* CollectionView */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		F8A9A0AD2C497E1500783590 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F8A9A0AE2C497E4800783590 /* HorizontalPickerViewCell.swift */,
+				F8A9A0B02C49815200783590 /* HorizontalPickerView.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,8 +200,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A9A0AF2C497E4800783590 /* HorizontalPickerViewCell.swift in Sources */,
 				F8A9A0862C49620B00783590 /* ViewController.swift in Sources */,
 				F8A9A0992C496A1A00783590 /* Fonts.swift in Sources */,
+				F8A9A0B12C49815200783590 /* HorizontalPickerView.swift in Sources */,
 				F8A9A09B2C496A3300783590 /* Assets.swift in Sources */,
 				F8A9A09E2C496A9800783590 /* UIView+extension.swift in Sources */,
 				F8A9A0822C49620B00783590 /* AppDelegate.swift in Sources */,
