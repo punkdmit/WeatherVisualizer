@@ -22,6 +22,10 @@ class WeatherViewController: UIViewController {
 
     private enum Constants { }
 
+    //MARK: Private properties
+
+    private var weatherViewFactory: WeatherViewFactory?
+
     // MARK: UI Elements
 
     private lazy var horizontalPickerView: HorizontalPickerView = {
@@ -88,32 +92,52 @@ extension WeatherViewController: UICollectionViewDataSource, UICollectionViewDel
         horizontalPickerView.select(row: indexPath.row, data: Weather.allCases)
         let selectedWeather = Weather.allCases[indexPath.row]
 
-        let factory: WeatherViewFactory?
         switch selectedWeather {
         case .rain:
-            factory = RainViewFactory()
+            weatherViewFactory = RainViewFactory()
         case .fog:
-            factory = FogViewFactory()
+            weatherViewFactory = FogViewFactory()
         case .sun:
-            factory = SunViewFactory()
+            weatherViewFactory = SunViewFactory()
         case .thunderstorm:
-            factory = RainViewFactory()
+            weatherViewFactory = RainViewFactory()
         case .wind:
-            factory = RainViewFactory()
+            weatherViewFactory = WindViewFactory()
         case .clouds:
-            factory = RainViewFactory()
+            weatherViewFactory = CloudsViewFactory()
         }
+        let newView = weatherViewFactory?.createView(
+            for: selectedWeather,
+            with: AppConstants.screenSize
+        ) as? UIView
 
-        view.subviews.forEach {
-            if $0 !== horizontalPickerView {
-                $0.removeFromSuperview()
-            }
-        }
-
-        let newView = factory?.createView(for: selectedWeather) as? UIView
         if let newView {
-            view.insertSubview(newView, belowSubview: horizontalPickerView)
+            addSubviewWithFade(newView)
         }
+    }
+}
+
+//MARK: - Animation
+private extension WeatherViewController {
+
+    func addSubviewWithFade(
+        _ newView: UIView,
+        duration: TimeInterval = 1
+    ) {
+        newView.alpha = 0
+        view.insertSubview(newView, belowSubview: horizontalPickerView)
+
+        if let oldView = view.subviews.first(where: { $0 != newView && $0 != horizontalPickerView }) {
+            UIView.animate(withDuration: duration, animations: {
+                oldView.alpha = 0
+            }, completion: { _ in
+                oldView.removeFromSuperview()
+            })
+        }
+
+        UIView.animate(withDuration: duration, animations: {
+            newView.alpha = 1
+        })
     }
 }
 
@@ -140,6 +164,14 @@ private extension WeatherViewController {
     func selectRandomWeather() {
         let randomIndex = Int.random(in: 0..<Weather.allCases.count)
         horizontalPickerView.selectRandom(row: randomIndex)
+    }
+
+    func removePreviousSubview() {
+        view.subviews.forEach {
+            if $0 !== horizontalPickerView {
+                $0.removeFromSuperview()
+            }
+        }
     }
 }
 

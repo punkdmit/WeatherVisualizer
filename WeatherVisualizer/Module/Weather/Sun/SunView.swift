@@ -26,11 +26,9 @@ final class SunView: UIView {
     private lazy var sunImageView: UIImageView = {
         let image = UIImageView()
         image.image = Constants.sunImage
-        image.frame = CGRect(
-            x: Constants.sunImageCGPoint.x,
-            y: Constants.sunImageCGPoint.y,
-            width: bounds.width,
-            height: bounds.width
+        image.frame.size = CGSize(
+            width: bounds.width * 2,
+            height: bounds.width * 2
         )
         return image
     }()
@@ -67,7 +65,7 @@ extension SunView: WeatherViewProtocol {
             clockwise: true
         )
 
-        /// Анимация
+        ///анимация
         let animation = CAKeyframeAnimation(keyPath: Constants.keyframeAnimationPath)
         animation.path = path.cgPath
         animation.duration = Constants.animationDuration
@@ -83,7 +81,7 @@ extension SunView: WeatherViewProtocol {
 private extension SunView {
 
     func setupUI() {
-        backgroundColor = Assets.Colors.blueLight
+        backgroundColor = Assets.Colors.blue
         configureLayout()
     }
 

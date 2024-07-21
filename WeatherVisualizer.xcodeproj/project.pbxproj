@@ -15,6 +15,10 @@
 		F8707AE62C4BF25A0025E2AE /* SunViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8707AE52C4BF25A0025E2AE /* SunViewFactory.swift */; };
 		F8707AE92C4C2CDD0025E2AE /* FogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8707AE82C4C2CDD0025E2AE /* FogView.swift */; };
 		F8707AEB2C4C2DCC0025E2AE /* FogViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8707AEA2C4C2DCC0025E2AE /* FogViewFactory.swift */; };
+		F871F9B52C4CFDC400EB9E25 /* CloudsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871F9B42C4CFDC400EB9E25 /* CloudsView.swift */; };
+		F871F9B92C4D074F00EB9E25 /* CloudsViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871F9B82C4D074F00EB9E25 /* CloudsViewFactory.swift */; };
+		F871F9BC2C4D110800EB9E25 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871F9BB2C4D110800EB9E25 /* WindView.swift */; };
+		F871F9BE2C4D217E00EB9E25 /* WindViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871F9BD2C4D217E00EB9E25 /* WindViewFactory.swift */; };
 		F8A9A0822C49620B00783590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0812C49620B00783590 /* AppDelegate.swift */; };
 		F8A9A0842C49620B00783590 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0832C49620B00783590 /* SceneDelegate.swift */; };
 		F8A9A0862C49620B00783590 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0852C49620B00783590 /* WeatherViewController.swift */; };
@@ -37,6 +41,10 @@
 		F8707AE52C4BF25A0025E2AE /* SunViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunViewFactory.swift; sourceTree = "<group>"; };
 		F8707AE82C4C2CDD0025E2AE /* FogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogView.swift; sourceTree = "<group>"; };
 		F8707AEA2C4C2DCC0025E2AE /* FogViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogViewFactory.swift; sourceTree = "<group>"; };
+		F871F9B42C4CFDC400EB9E25 /* CloudsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsView.swift; sourceTree = "<group>"; };
+		F871F9B82C4D074F00EB9E25 /* CloudsViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsViewFactory.swift; sourceTree = "<group>"; };
+		F871F9BB2C4D110800EB9E25 /* WindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
+		F871F9BD2C4D217E00EB9E25 /* WindViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindViewFactory.swift; sourceTree = "<group>"; };
 		F8A9A07E2C49620B00783590 /* WeatherVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A9A0812C49620B00783590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8A9A0832C49620B00783590 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +88,8 @@
 				F8707AD72C4BBE700025E2AE /* Rain */,
 				F8707AE12C4BF1C70025E2AE /* Sun */,
 				F8707AE72C4C2CCA0025E2AE /* Fog */,
+				F871F9B62C4D00AD00EB9E25 /* Clouds */,
+				F871F9BA2C4D10EB00EB9E25 /* Wind */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -100,6 +110,24 @@
 				F8707AEA2C4C2DCC0025E2AE /* FogViewFactory.swift */,
 			);
 			path = Fog;
+			sourceTree = "<group>";
+		};
+		F871F9B62C4D00AD00EB9E25 /* Clouds */ = {
+			isa = PBXGroup;
+			children = (
+				F871F9B42C4CFDC400EB9E25 /* CloudsView.swift */,
+				F871F9B82C4D074F00EB9E25 /* CloudsViewFactory.swift */,
+			);
+			path = Clouds;
+			sourceTree = "<group>";
+		};
+		F871F9BA2C4D10EB00EB9E25 /* Wind */ = {
+			isa = PBXGroup;
+			children = (
+				F871F9BB2C4D110800EB9E25 /* WindView.swift */,
+				F871F9BD2C4D217E00EB9E25 /* WindViewFactory.swift */,
+			);
+			path = Wind;
 			sourceTree = "<group>";
 		};
 		F8A9A0752C49620B00783590 = {
@@ -258,17 +286,21 @@
 			files = (
 				F8A9A0AF2C497E4800783590 /* HorizontalPickerViewCell.swift in Sources */,
 				F8A9A0862C49620B00783590 /* WeatherViewController.swift in Sources */,
+				F871F9B52C4CFDC400EB9E25 /* CloudsView.swift in Sources */,
+				F871F9B92C4D074F00EB9E25 /* CloudsViewFactory.swift in Sources */,
 				F8707AEB2C4C2DCC0025E2AE /* FogViewFactory.swift in Sources */,
 				F8707ADE2C4BDD270025E2AE /* WeatherViewFactory.swift in Sources */,
 				F8707ADB2C4BDB5C0025E2AE /* WeatherViewProtocol.swift in Sources */,
 				F8707AD92C4BBE7F0025E2AE /* RainView.swift in Sources */,
 				F8707AE32C4BF1E60025E2AE /* SunView.swift in Sources */,
 				F8707AE02C4BE90D0025E2AE /* RainViewFactory.swift in Sources */,
+				F871F9BC2C4D110800EB9E25 /* WindView.swift in Sources */,
 				F8A9A0992C496A1A00783590 /* Fonts.swift in Sources */,
 				F8A9A0B12C49815200783590 /* HorizontalPickerView.swift in Sources */,
 				F8A9A09B2C496A3300783590 /* Assets.swift in Sources */,
 				F8707AE62C4BF25A0025E2AE /* SunViewFactory.swift in Sources */,
 				F8A9A09E2C496A9800783590 /* UIView+extension.swift in Sources */,
+				F871F9BE2C4D217E00EB9E25 /* WindViewFactory.swift in Sources */,
 				F8A9A0822C49620B00783590 /* AppDelegate.swift in Sources */,
 				F8A9A0842C49620B00783590 /* SceneDelegate.swift in Sources */,
 				F8A9A0972C4969FE00783590 /* AppConstants.swift in Sources */,

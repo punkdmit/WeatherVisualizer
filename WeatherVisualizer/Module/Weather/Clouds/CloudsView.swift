@@ -1,35 +1,31 @@
 //
-//  FogView.swift
+//  CloudsView.swift
 //  WeatherVisualizer
 //
-//  Created by Dmitry Apenko on 20.07.2024.
+//  Created by Dmitry Apenko on 21.07.2024.
 //
 
 import UIKit
 
-final class FogView: UIView {
+final class CloudsView: UIView {
 
     // MARK: Constants
 
     private enum Constants {
-        static let fogImage = UIImage(named: "fog")
-        static let numberOfFogImages = 5
-        static let animationDuration: CFTimeInterval = 5
+        static let cloudImage = UIImage(named: "cloud")
+        static let numberOfCloudImages = 9
+        static let animationDuration: CFTimeInterval = 10
         static let keyframeAnimationPath = "position"
-        static let fogAnimationKey = "fogAnimation"
+        static let fogAnimationKey = "cloudAnimation"
         static let animationRange: CGFloat = 20
     }
 
     // MARK: UI Elements
 
-    private lazy var fogImageViews: [UIImageView] = {
+    private lazy var cloudImageViews: [UIImageView] = {
         var imageViews = [UIImageView]()
-        for _ in 0..<Constants.numberOfFogImages {
-            let imageView = UIImageView(image: Constants.fogImage)
-            imageView.frame.size = CGSize(
-                width: bounds.width,
-                height: bounds.width
-            )
+        for _ in 0..<Constants.numberOfCloudImages {
+            let imageView = UIImageView(image: Constants.cloudImage)
             imageViews.append(imageView)
         }
         return imageViews
@@ -47,36 +43,49 @@ final class FogView: UIView {
 }
 
 // MARK: - WeatherViewProtocol
-extension FogView: WeatherViewProtocol {
+extension CloudsView: WeatherViewProtocol {
 
     func setupView() {
         setupUI()
         setupFogPositions()
+        setupFogSize()
     }
 
     func startAnimation() {
-        for fogImageView in fogImageViews {
-            animateFogImageView(fogImageView)
+        for cloudImageView in cloudImageViews {
+            animateCloudImageView(cloudImageView)
         }
     }
 }
 
 // MARK: - Private methods
-private extension FogView {
+private extension CloudsView {
 
     func setupUI() {
-        backgroundColor = Assets.Colors.white
+        backgroundColor = Assets.Colors.blue
         configureLayout()
     }
 
     func configureLayout() {
-        addSubviews(fogImageViews)
+        addSubviews(cloudImageViews)
+    }
+
+    func setupFogSize() {
+        for imageView in cloudImageViews {
+            let aspectRatio = imageView.frame.width / imageView.frame.height
+            let width = bounds.width
+            let height = width / aspectRatio
+            imageView.frame.size = CGSize(
+                width: width,
+                height: height
+            )
+        }
     }
 
     func setupFogPositions() {
         let positions = generateFixedPositions()
-        guard positions.count <= fogImageViews.count else { return }
-        for (index, fogImageView) in fogImageViews.enumerated() {
+        guard positions.count <= cloudImageViews.count else { return }
+        for (index, fogImageView) in cloudImageViews.enumerated() {
             fogImageView.frame.origin = positions[index]
         }
     }
@@ -87,13 +96,17 @@ private extension FogView {
         return [
             CGPoint(x: width * 0.2, y: height * 0.1),
             CGPoint(x: width * 0.1, y: height * 0.3),
-            CGPoint(x: width * 0.7, y: height * 0.5),
-            CGPoint(x: width * 0.6, y: height * 0.7),
-            CGPoint(x: width * 0.9, y: height * 0.9)
+            CGPoint(x: width * 0.3, y: height * 0.2),
+            CGPoint(x: width * 0.7, y: height * 0.3),
+            CGPoint(x: width * 0.1, y: height * 0.1),
+            CGPoint(x: width * 0.9, y: height * 0.2),
+            CGPoint(x: width, y: height * 0.3),
+            CGPoint(x: width, y: height * 0.2),
+            CGPoint(x: width * 0.6, y: height * 0.1)
         ]
     }
 
-    func animateFogImageView(_ imageView: UIImageView) {
+    func animateCloudImageView(_ imageView: UIImageView) {
         let animation = CABasicAnimation(keyPath: Constants.keyframeAnimationPath)
         animation.duration = Constants.animationDuration
         animation.repeatCount = .infinity
@@ -112,3 +125,4 @@ private extension FogView {
         imageView.layer.add(animation, forKey: Constants.fogAnimationKey)
     }
 }
+

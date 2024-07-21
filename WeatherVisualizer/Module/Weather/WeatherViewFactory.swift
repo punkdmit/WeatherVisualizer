@@ -12,7 +12,10 @@ import UIKit
 class WeatherViewFactory {
 
     ///абстрактный фабричный метод
-    func createView(for weather: Weather) -> (any WeatherViewProtocol)? {
+    func createView(
+        for weather: Weather,
+        with frame: CGRect 
+    ) -> (any WeatherViewProtocol)? {
         fatalError("Implement me")
     }
 }

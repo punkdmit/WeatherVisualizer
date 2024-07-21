@@ -10,9 +10,12 @@ import UIKit
 //MARK: - SunViewFactory
 final class SunViewFactory: WeatherViewFactory {
 
-    override func createView(for weather: Weather) -> (any WeatherViewProtocol)? {
+    override func createView(
+        for weather: Weather,
+        with frame: CGRect
+    ) -> (any WeatherViewProtocol)? {
         guard weather == .sun else { return nil }
-        let sunView = SunView(frame: AppConstants.screenSize)
+        let sunView = SunView(frame: frame)
         sunView.setupView()
         sunView.startAnimation()
         return sunView

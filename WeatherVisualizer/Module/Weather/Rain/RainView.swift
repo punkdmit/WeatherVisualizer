@@ -64,7 +64,7 @@ private extension RainView {
         ///позиция
         rainLayer.emitterPosition = CGPoint(
             x: bounds.width / 2,
-            y: -50
+            y: -bounds.width
         )
         ///размер
         rainLayer.emitterSize = CGSize(

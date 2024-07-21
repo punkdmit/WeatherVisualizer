@@ -9,9 +9,12 @@ import UIKit
 
 final class FogViewFactory: WeatherViewFactory {
 
-    override func createView(for weather: Weather) -> (any WeatherViewProtocol)? {
+    override func createView(
+        for weather: Weather,
+        with frame: CGRect
+    ) -> (any WeatherViewProtocol)? {
         guard weather == .fog else { return nil }
-        let fogView = FogView(frame: AppConstants.screenSize)
+        let fogView = FogView(frame: frame)
         fogView.setupView()
         fogView.startAnimation()
         return fogView
