@@ -63,8 +63,8 @@ extension HorizontalPickerView {
         row: Int,
         data: [Weather],
         in section: Int = 0,
-        animated: Bool = true
-//        isFirstLaunch: Bool = false
+        animated: Bool = true,
+        isFirstLaunch: Bool = false
     ) {
         guard row < data.count else { return }
         let indexPath = IndexPath(row: row, section: section)
@@ -74,10 +74,18 @@ extension HorizontalPickerView {
             animated: animated,
             scrollPosition: .centeredHorizontally
         )
-
+        if isFirstLaunch {
+            delegate?.collectionView?(collectionView, didSelectItemAt: indexPath)
+        }
     }
 
-
+    func selectRandom(
+        row: Int,
+        section: Int = 0
+    ) {
+        let indexPath = IndexPath(row: row, section: section)
+        delegate?.collectionView?(collectionView, didSelectItemAt: indexPath)
+    }
 }
 
 //MARK: - Private methods

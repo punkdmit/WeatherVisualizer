@@ -38,6 +38,11 @@ class WeatherViewController: UIViewController {
         setupUI()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        selectRandomWeather()
+    }
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -132,5 +137,9 @@ private extension WeatherViewController {
         ])
     }
 
+    func selectRandomWeather() {
+        let randomIndex = Int.random(in: 0..<Weather.allCases.count)
+        horizontalPickerView.selectRandom(row: randomIndex)
+    }
 }
 
