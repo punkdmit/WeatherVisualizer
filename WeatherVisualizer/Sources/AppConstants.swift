@@ -19,5 +19,5 @@ enum AppConstants {
     /// Ширина экрана iPhone
     static let screenWidth = UIScreen.main.bounds.width
     /// Высота экрана iPhone
-    static let screenHeight = UIScreen.main.bounds.height
+    static let screenSize = UIScreen.main.bounds
 }

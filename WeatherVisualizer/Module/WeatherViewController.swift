@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WeatherViewController.swift
 //  WeatherVisualizer
 //
 //  Created by Dmitry Apenko on 18.07.2024.
@@ -7,17 +7,20 @@
 
 import UIKit
 
-class HorizontalPickerViewController: UIViewController {
+enum Weather: String, CaseIterable {
+    case fog = "Туман"
+    case sun = "Солнце"
+    case rain = "Дождь"
+    case thunderstorm = "Гроза"
+    case wind = "Ветер"
+    case clouds = "Облака"
+}
+
+class WeatherViewController: UIViewController {
 
     // MARK: Constants
 
-    private enum Constants {
-        static let weatherArray = ["Туман", "Солнце", "Дождь", "Гроза", "Ветер", "Облачно"]
-    }
-
-    // MARK: Private properties
-
-    private var data: [String] = []
+    private enum Constants { }
 
     // MARK: UI Elements
 
@@ -33,15 +36,21 @@ class HorizontalPickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setUpData()
+    }
 
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
-extension HorizontalPickerViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension WeatherViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data.count
+        Weather.allCases.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,7 +60,7 @@ extension HorizontalPickerViewController: UICollectionViewDataSource, UICollecti
         ) as? HorizontalPickerViewCell else {
             return UICollectionViewCell()
         }
-        cell.configure(with: data[indexPath.row])
+        cell.configure(with: Weather.allCases[indexPath.row])
         return cell
     }
 
@@ -71,12 +80,40 @@ extension HorizontalPickerViewController: UICollectionViewDataSource, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        horizontalPickerView.select(row: indexPath.row, data: data)
+        horizontalPickerView.select(row: indexPath.row, data: Weather.allCases)
+        let selectedWeather = Weather.allCases[indexPath.row]
+
+        let factory: WeatherViewFactory?
+        switch selectedWeather {
+        case .rain:
+            factory = RainViewFactory()
+        case .fog:
+            factory = FogViewFactory()
+        case .sun:
+            factory = SunViewFactory()
+        case .thunderstorm:
+            factory = RainViewFactory()
+        case .wind:
+            factory = RainViewFactory()
+        case .clouds:
+            factory = RainViewFactory()
+        }
+
+        view.subviews.forEach {
+            if $0 !== horizontalPickerView {
+                $0.removeFromSuperview()
+            }
+        }
+
+        let newView = factory?.createView(for: selectedWeather) as? UIView
+        if let newView {
+            view.insertSubview(newView, belowSubview: horizontalPickerView)
+        }
     }
 }
 
 //MARK: - Private methods
-private extension HorizontalPickerViewController {
+private extension WeatherViewController {
 
     func setupUI() {
         view.backgroundColor = Assets.Colors.white
@@ -95,10 +132,5 @@ private extension HorizontalPickerViewController {
         ])
     }
 
-    func setUpData() {
-        for value in Constants.weatherArray {
-            data.append(value)
-        }
-    }
 }
 

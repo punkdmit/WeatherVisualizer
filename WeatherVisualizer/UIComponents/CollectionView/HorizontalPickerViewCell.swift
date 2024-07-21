@@ -37,7 +37,6 @@ final class HorizontalPickerViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-//        self.layer.cornerRadius = frame.height / 1.5
     }
 
     required init?(coder: NSCoder) {
@@ -62,20 +61,8 @@ extension HorizontalPickerViewCell {
 
 extension HorizontalPickerViewCell {
 
-    func configure(with title: String/*, isSelected: Bool = false*/) {
-        titleLabel.text = title
-
-//        backgroundColor = isSelected
-//        ? Assets.Colors.dark
-//        : Assets.Colors.grayLight
-//
-//        layer.borderColor = isSelected
-//        ? Assets.Colors.grayLight.cgColor
-//        : Assets.Colors.dark.cgColor
-//
-//        titleLabel.textColor = isSelected
-//        ? Assets.Colors.grayLight
-//        : Assets.Colors.dark
+    func configure(with weather: Weather) { //naming
+        titleLabel.text = weather.rawValue
     }
 }
 

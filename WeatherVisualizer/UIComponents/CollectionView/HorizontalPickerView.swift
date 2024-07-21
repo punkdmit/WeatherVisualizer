@@ -61,9 +61,10 @@ extension HorizontalPickerView {
     
     func select(
         row: Int,
-        data: [String],
+        data: [Weather],
         in section: Int = 0,
         animated: Bool = true
+//        isFirstLaunch: Bool = false
     ) {
         guard row < data.count else { return }
         let indexPath = IndexPath(row: row, section: section)
@@ -73,14 +74,17 @@ extension HorizontalPickerView {
             animated: animated,
             scrollPosition: .centeredHorizontally
         )
+
     }
+
+
 }
 
 //MARK: - Private methods
 private extension HorizontalPickerView {
 
     func setupUI() {
-        collectionView.backgroundColor = Assets.Colors.white
+        collectionView.backgroundColor = .clear
         configureLayout()
     }
 
