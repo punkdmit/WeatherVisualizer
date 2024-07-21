@@ -29,6 +29,10 @@ final class HorizontalPickerView: UIView {
         }
     }
 
+    //MARK: Internal properties
+
+    var collectionViewHeight: CGFloat?
+
     //MARK: Private properties
 
     private var selectedCellIndexPath: IndexPath?
@@ -49,6 +53,11 @@ final class HorizontalPickerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        collectionViewHeight = collectionView.frame.height
     }
     
     required init?(coder: NSCoder) {
@@ -100,8 +109,8 @@ private extension HorizontalPickerView {
             collectionView.widthAnchor.constraint(equalToConstant: bounds.width),
             collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor, multiplier: Constants.collectionViewWidthMultiplier),
             collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppConstants.compactSpacing),
-            collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)
+            collectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.compactSpacing),
+            collectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -AppConstants.compactSpacing)
         ])
     }
 }

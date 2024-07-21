@@ -51,6 +51,7 @@ final class HorizontalPickerViewCell: UICollectionViewCell {
 
 }
 
+//MARK: - Override methods
 extension HorizontalPickerViewCell {
 
     override func prepareForReuse() {
@@ -59,13 +60,15 @@ extension HorizontalPickerViewCell {
     }
 }
 
+//MARK: - Internal methods
 extension HorizontalPickerViewCell {
 
-    func configure(with weather: Weather) { //naming
-        titleLabel.text = weather.rawValue
+    func configure(with weather: Weather) { 
+        titleLabel.text = weather.localized
     }
 }
 
+//MARK: - Private methods
 private extension HorizontalPickerViewCell {
 
     func setupUI() {
@@ -86,25 +89,13 @@ private extension HorizontalPickerViewCell {
 
     func setupCell() {
         backgroundColor = isSelected
-        ? Assets.Colors.dark
-        : Assets.Colors.grayLight
-
-        layer.borderColor = isSelected
-        ? Assets.Colors.grayLight.cgColor
-        : Assets.Colors.dark.cgColor
+        ? Assets.Colors.lime
+        : Assets.Colors.dark
 
         titleLabel.textColor = isSelected
-        ? Assets.Colors.grayLight
-        : Assets.Colors.dark
-    }
+        ? Assets.Colors.dark
+        : Assets.Colors.white
 
-//    func makeShadow() {
-//        containingView.backgroundColor = Assets.Colors.background
-//        containingView.layer.shadowColor = Assets.Colors.grayIcon.cgColor
-//        containingView.layer.shadowOffset = Constants.shadowOffset
-//        containingView.layer.shadowOpacity = Constants.shadowOpacity
-//        containingView.layer.shadowRadius = Constants.shadowRadius
-//        containingView.layer.cornerRadius = Constants.cornerRadius
-//        containingView.layer.masksToBounds = false
-//    }
+        layer.borderColor = Assets.Colors.dark.cgColor
+    }
 }

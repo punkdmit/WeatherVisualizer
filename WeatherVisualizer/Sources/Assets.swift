@@ -16,7 +16,7 @@ internal enum Assets {
         internal static let lime = UIColor(named: "lime") ?? UIColor()
         internal static let red = UIColor(named: "red") ?? UIColor()
         internal static let blue = UIColor(named: "blue") ?? UIColor()
-        internal static let pink = UIColor(named: "pink") ?? UIColor()
+        internal static let yellow = UIColor(named: "yellow") ?? UIColor()
         internal static let clear = UIColor(named: "clear") ?? UIColor()
 
     }

@@ -13,7 +13,7 @@ final class WindView: UIView {
 
     private enum Constants {
         static let windImage = UIImage(named: "wind")
-        static let windCellScale: CGFloat = 0.8
+        static let windCellScale: CGFloat = 0.6
         static let windCellBirthRate: Float = 2
         static let windCellLifeTime: Float = 10
         static let windCellVelocity: CGFloat = 300
@@ -58,7 +58,7 @@ extension WindView: WeatherViewProtocol {
 private extension WindView {
 
     func setupUI() {
-        backgroundColor = Assets.Colors.pink
+        backgroundColor = Assets.Colors.yellow
     }
 
     private func setupWindLayer() {

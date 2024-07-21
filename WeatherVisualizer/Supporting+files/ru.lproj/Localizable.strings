@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  WeatherVisualizer
+
+  Created by Dmitry Apenko on 21.07.2024.
+  
+*/
+
+"Fog" = "Туман";
+"Sunny" = "Солнце";
+"Rainy" = "Дождь";
+"Thunderstorm" = "Гроза";
+"Wind" = "Ветер";
+"Cloudy" = "Облака";

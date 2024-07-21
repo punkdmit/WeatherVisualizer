@@ -14,13 +14,19 @@ enum Weather: String, CaseIterable {
     case thunderstorm = "Гроза"
     case wind = "Ветер"
     case clouds = "Облака"
+
+    var localized: String {
+        return rawValue.localized()
+    }
 }
 
 class WeatherViewController: UIViewController {
 
     // MARK: Constants
 
-    private enum Constants { }
+    private enum Constants {
+        static let animateDuration: TimeInterval = 1
+    }
 
     //MARK: Private properties
 
@@ -75,8 +81,8 @@ extension WeatherViewController: UICollectionViewDataSource, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(
-            width: view.bounds.width / 4,
-            height: view.bounds.height
+            width: view.bounds.width / 3,
+            height: (horizontalPickerView.collectionViewHeight ?? 0) - 1
         )
     }
 
@@ -122,7 +128,7 @@ private extension WeatherViewController {
 
     func addSubviewWithFade(
         _ newView: UIView,
-        duration: TimeInterval = 1
+        duration: TimeInterval = Constants.animateDuration
     ) {
         newView.alpha = 0
         view.insertSubview(newView, belowSubview: horizontalPickerView)

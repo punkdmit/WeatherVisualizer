@@ -19,6 +19,8 @@
 		F871F9B92C4D074F00EB9E25 /* CloudsViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871F9B82C4D074F00EB9E25 /* CloudsViewFactory.swift */; };
 		F871F9BC2C4D110800EB9E25 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871F9BB2C4D110800EB9E25 /* WindView.swift */; };
 		F871F9BE2C4D217E00EB9E25 /* WindViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871F9BD2C4D217E00EB9E25 /* WindViewFactory.swift */; };
+		F871F9C02C4D578200EB9E25 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871F9BF2C4D578200EB9E25 /* String+extension.swift */; };
+		F871F9C32C4D584400EB9E25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F871F9C12C4D584400EB9E25 /* Localizable.strings */; };
 		F8A9A0822C49620B00783590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0812C49620B00783590 /* AppDelegate.swift */; };
 		F8A9A0842C49620B00783590 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0832C49620B00783590 /* SceneDelegate.swift */; };
 		F8A9A0862C49620B00783590 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A9A0852C49620B00783590 /* WeatherViewController.swift */; };
@@ -45,6 +47,9 @@
 		F871F9B82C4D074F00EB9E25 /* CloudsViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsViewFactory.swift; sourceTree = "<group>"; };
 		F871F9BB2C4D110800EB9E25 /* WindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
 		F871F9BD2C4D217E00EB9E25 /* WindViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindViewFactory.swift; sourceTree = "<group>"; };
+		F871F9BF2C4D578200EB9E25 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		F871F9C22C4D584400EB9E25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F871F9C42C4D58AD00EB9E25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F8A9A07E2C49620B00783590 /* WeatherVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A9A0812C49620B00783590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8A9A0832C49620B00783590 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				F8A9A09D2C496A9800783590 /* UIView+extension.swift */,
+				F871F9BF2C4D578200EB9E25 /* String+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 				F8A9A0832C49620B00783590 /* SceneDelegate.swift */,
 				F8A9A08A2C49620F00783590 /* Assets.xcassets */,
 				F8A9A08C2C49620F00783590 /* LaunchScreen.storyboard */,
+				F871F9C12C4D584400EB9E25 /* Localizable.strings */,
 			);
 			path = "Supporting+files";
 			sourceTree = "<group>";
@@ -256,6 +263,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = F8A9A0752C49620B00783590;
 			productRefGroup = F8A9A07F2C49620B00783590 /* Products */;
@@ -273,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A9A08B2C49620F00783590 /* Assets.xcassets in Resources */,
+				F871F9C32C4D584400EB9E25 /* Localizable.strings in Resources */,
 				F8A9A08E2C49620F00783590 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +309,7 @@
 				F8A9A09B2C496A3300783590 /* Assets.swift in Sources */,
 				F8707AE62C4BF25A0025E2AE /* SunViewFactory.swift in Sources */,
 				F8A9A09E2C496A9800783590 /* UIView+extension.swift in Sources */,
+				F871F9C02C4D578200EB9E25 /* String+extension.swift in Sources */,
 				F871F9BE2C4D217E00EB9E25 /* WindViewFactory.swift in Sources */,
 				F8A9A0822C49620B00783590 /* AppDelegate.swift in Sources */,
 				F8A9A0842C49620B00783590 /* SceneDelegate.swift in Sources */,
@@ -311,6 +321,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		F871F9C12C4D584400EB9E25 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F871F9C22C4D584400EB9E25 /* en */,
+				F871F9C42C4D58AD00EB9E25 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F8A9A08C2C49620F00783590 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -327,6 +346,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -390,6 +410,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
