@@ -117,11 +117,8 @@ private extension CloudsView {
         let startY = imageView.frame.origin.y
         let endX = startX + CGFloat.random(in: -Constants.animationRange...Constants.animationRange)
         let endY = startY + CGFloat.random(in: -Constants.animationRange...Constants.animationRange)
-
-        ///ставим начальную и конечную позицию
         animation.fromValue = CGPoint(x: startX, y: startY)
         animation.toValue = CGPoint(x: endX, y: endY)
-
         imageView.layer.add(animation, forKey: Constants.fogAnimationKey)
     }
 }

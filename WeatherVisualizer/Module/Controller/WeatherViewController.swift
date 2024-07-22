@@ -106,7 +106,7 @@ extension WeatherViewController: UICollectionViewDataSource, UICollectionViewDel
         case .sun:
             weatherViewFactory = SunViewFactory()
         case .thunderstorm:
-            weatherViewFactory = RainViewFactory()
+            weatherViewFactory = ThunderstormViewFactory()
         case .wind:
             weatherViewFactory = WindViewFactory()
         case .clouds:
@@ -170,14 +170,6 @@ private extension WeatherViewController {
     func selectRandomWeather() {
         let randomIndex = Int.random(in: 0..<Weather.allCases.count)
         horizontalPickerView.selectRandom(row: randomIndex)
-    }
-
-    func removePreviousSubview() {
-        view.subviews.forEach {
-            if $0 !== horizontalPickerView {
-                $0.removeFromSuperview()
-            }
-        }
     }
 }
 

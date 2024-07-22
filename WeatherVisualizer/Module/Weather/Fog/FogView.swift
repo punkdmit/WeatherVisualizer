@@ -108,7 +108,6 @@ private extension FogView {
         ///ставим начальную и конечную позицию
         animation.fromValue = CGPoint(x: startX, y: startY)
         animation.toValue = CGPoint(x: endX, y: endY)
-
         imageView.layer.add(animation, forKey: Constants.fogAnimationKey)
     }
 }

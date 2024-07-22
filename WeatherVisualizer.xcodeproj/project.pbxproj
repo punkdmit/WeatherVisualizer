@@ -15,6 +15,8 @@
 		F8707AE62C4BF25A0025E2AE /* SunViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8707AE52C4BF25A0025E2AE /* SunViewFactory.swift */; };
 		F8707AE92C4C2CDD0025E2AE /* FogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8707AE82C4C2CDD0025E2AE /* FogView.swift */; };
 		F8707AEB2C4C2DCC0025E2AE /* FogViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8707AEA2C4C2DCC0025E2AE /* FogViewFactory.swift */; };
+		F8714AA02C4E71DF003F3200 /* ThunderstormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8714A9F2C4E71DF003F3200 /* ThunderstormView.swift */; };
+		F8714AA22C4E7C15003F3200 /* ThunderstormViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8714AA12C4E7C15003F3200 /* ThunderstormViewFactory.swift */; };
 		F871F9B52C4CFDC400EB9E25 /* CloudsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871F9B42C4CFDC400EB9E25 /* CloudsView.swift */; };
 		F871F9B92C4D074F00EB9E25 /* CloudsViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871F9B82C4D074F00EB9E25 /* CloudsViewFactory.swift */; };
 		F871F9BC2C4D110800EB9E25 /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F871F9BB2C4D110800EB9E25 /* WindView.swift */; };
@@ -43,6 +45,8 @@
 		F8707AE52C4BF25A0025E2AE /* SunViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunViewFactory.swift; sourceTree = "<group>"; };
 		F8707AE82C4C2CDD0025E2AE /* FogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogView.swift; sourceTree = "<group>"; };
 		F8707AEA2C4C2DCC0025E2AE /* FogViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogViewFactory.swift; sourceTree = "<group>"; };
+		F8714A9F2C4E71DF003F3200 /* ThunderstormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThunderstormView.swift; sourceTree = "<group>"; };
+		F8714AA12C4E7C15003F3200 /* ThunderstormViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThunderstormViewFactory.swift; sourceTree = "<group>"; };
 		F871F9B42C4CFDC400EB9E25 /* CloudsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsView.swift; sourceTree = "<group>"; };
 		F871F9B82C4D074F00EB9E25 /* CloudsViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsViewFactory.swift; sourceTree = "<group>"; };
 		F871F9BB2C4D110800EB9E25 /* WindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 				F8707AE72C4C2CCA0025E2AE /* Fog */,
 				F871F9B62C4D00AD00EB9E25 /* Clouds */,
 				F871F9BA2C4D10EB00EB9E25 /* Wind */,
+				F8714A9E2C4E6F55003F3200 /* Thunderstorm */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -115,6 +120,23 @@
 				F8707AEA2C4C2DCC0025E2AE /* FogViewFactory.swift */,
 			);
 			path = Fog;
+			sourceTree = "<group>";
+		};
+		F8714A9E2C4E6F55003F3200 /* Thunderstorm */ = {
+			isa = PBXGroup;
+			children = (
+				F8714A9F2C4E71DF003F3200 /* ThunderstormView.swift */,
+				F8714AA12C4E7C15003F3200 /* ThunderstormViewFactory.swift */,
+			);
+			path = Thunderstorm;
+			sourceTree = "<group>";
+		};
+		F8714AA32C4E8183003F3200 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F8A9A0852C49620B00783590 /* WeatherViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		F871F9B62C4D00AD00EB9E25 /* Clouds */ = {
@@ -198,7 +220,7 @@
 		F8A9A0A02C496C3700783590 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				F8A9A0852C49620B00783590 /* WeatherViewController.swift */,
+				F8714AA32C4E8183003F3200 /* Controller */,
 				F8707ADC2C4BDBBC0025E2AE /* Weather */,
 			);
 			path = Module;
@@ -311,10 +333,12 @@
 				F8A9A09E2C496A9800783590 /* UIView+extension.swift in Sources */,
 				F871F9C02C4D578200EB9E25 /* String+extension.swift in Sources */,
 				F871F9BE2C4D217E00EB9E25 /* WindViewFactory.swift in Sources */,
+				F8714AA22C4E7C15003F3200 /* ThunderstormViewFactory.swift in Sources */,
 				F8A9A0822C49620B00783590 /* AppDelegate.swift in Sources */,
 				F8A9A0842C49620B00783590 /* SceneDelegate.swift in Sources */,
 				F8A9A0972C4969FE00783590 /* AppConstants.swift in Sources */,
 				F8707AE92C4C2CDD0025E2AE /* FogView.swift in Sources */,
+				F8714AA02C4E71DF003F3200 /* ThunderstormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
